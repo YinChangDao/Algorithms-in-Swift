@@ -1,4 +1,4 @@
-//: Playground - noun: a place where people can play
+//: [Previous](@previous)
 
 import Foundation
 
@@ -35,7 +35,9 @@ func duplicate(arr: inout [Int]) -> (Bool, Int?) {
 /*:
  > # NO.2 在一个长度为 n+1 的数组里所有数字都在 1~n 的范围内，故数组中至少有一个数字是重复的。请找出数组中任意重复的数字，但不能修改输入的数组。
  ---
+ 
  思路1: arr2[arr[i]] = arr[i]   因为重新创建了arr2,空间复杂度为: O(n)
+ 
  思路2: 把 1~n 的数字从中间的数字 m 分为两部分，前半 1~m, 后半 m+1~n, 若前半数字的个数超过 m,说明前半一定包含重复数字，否则重复数字在后半，可以继续把这一半数字的区间一分为二，直到找到这个重复的数字。
  ---
  时间复杂度：<#O#> 空间复杂度：<#O#>
@@ -83,3 +85,6 @@ func getDuplication(arr: [Int]) -> Int {
 
 
 
+
+
+//: [Next](@next)
