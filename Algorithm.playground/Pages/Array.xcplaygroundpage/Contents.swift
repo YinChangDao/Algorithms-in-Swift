@@ -39,8 +39,9 @@ func duplicate(arr: inout [Int]) -> (Bool, Int?) {
  思路1: arr2[arr[i]] = arr[i]   因为重新创建了arr2,空间复杂度为: O(n)
  
  思路2: 把 1~n 的数字从中间的数字 m 分为两部分，前半 1~m, 后半 m+1~n, 若前半数字的个数超过 m,说明前半一定包含重复数字，否则重复数字在后半，可以继续把这一半数字的区间一分为二，直到找到这个重复的数字。
+ 
  ---
- 时间复杂度：<#O#> 空间复杂度：<#O#>
+ 时间复杂度：O(nlogn) 空间复杂度：O(1)
  */
 
 func getDuplication(arr: [Int]) -> Int {
@@ -82,8 +83,37 @@ func getDuplication(arr: [Int]) -> Int {
     return -1
 }
 
+/*:
+ > # 在一个二维数组中，每一行都按照从左至右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样一个二维数组和一个整数，判断数组中是否含有该整数。
+ ---
+ 1 2 8 9
+ 2 4 9 12
+ 4 7 10 13
+ 6 8 11 15
+ 
+ 时间复杂度：<#O#> 空间复杂度：<#O#>
+ */
 
+func find(matrix: [[Int]], rows: Int, columns: Int,  number: Int) -> Bool {
+    var isFound = false
+    if matrix.count != 0 && rows > 0 && columns > 0 {
+        var row = 0
+        var column = columns - 1
+        while row < rows && column >= 0 {
+            if matrix[row][column] == number {
+                isFound = true
+                break
+            } else if matrix[row][column] > number {
+                column = column - 1
+            } else {
+                row = row + 1
+            }
+        }
+    }
+    return isFound
+}
 
+//let isFound = find(matrix: [[1, 2, 8, 9], [2, 4, 9, 12], [4, 7, 10, 13], [6, 8, 11, 15]], rows: 4, columns: 4, number: 7)
 
 
 
