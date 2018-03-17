@@ -13,7 +13,7 @@ func duplicate(arr: inout [Int]) -> (Bool, Int?) {
         return (false, nil)
     }
     for  i in 0..<arr.count {
-        guard arr[i] > 0 || arr[i] <= arr.count - 1 else {
+        guard arr[i] >= 0 || arr[i] <= arr.count - 1 else {
             return (false, nil)
         }
     }

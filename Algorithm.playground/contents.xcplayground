@@ -4,5 +4,6 @@
         <page name='Table_of_Contents'/>
         <page name='Array'/>
         <page name='String'/>
+        <page name='BinaryTree'/>
     </pages>
 </playground>
