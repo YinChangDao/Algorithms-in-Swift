@@ -5,5 +5,6 @@
         <page name='Array'/>
         <page name='String'/>
         <page name='BinaryTree'/>
+        <page name='Sorting'/>
     </pages>
 </playground>
